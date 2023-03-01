@@ -9,8 +9,8 @@ function App() {
   const [foods, setFoods] = useState(foodsData);
   return (
     <div className="App">
-      <FoodForm settFoods={setFoods} />
-      <Row gutter={[30, 30]} align="stretch" justify="flex-start">
+      <FoodForm setFoods={setFoods} />
+      <Row gutter={[20, 20]} align="stretch" justify="flex-start">
         {foods.map((item) => (
           <Col key={item.name}>
             <FoodBox {...item} setFoods={setFoods} />

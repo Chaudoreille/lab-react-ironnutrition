@@ -56,7 +56,7 @@ function FoodBox(props) {
             <span style={{ fontWeight: '600' }}> kCal</span>
           </div>
         </div>
-        <Button onClick={deleteFoodBox(name)}>Delete</Button>
+        <Button type="primary" onClick={deleteFoodBox(name)}>Delete</Button>
       </Space>
     </Card>
   );
