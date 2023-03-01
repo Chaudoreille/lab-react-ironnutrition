@@ -44,17 +44,17 @@ function FoodBox(props) {
         </div>
         <div>
           <div>
-            <span>Calories: </span>
+            <span style={{ fontWeight: '600' }}>Calories: </span>
             <span>{calories}</span>
           </div>
           <div>
-            <span>Servings: </span>
+            <span style={{ fontWeight: '600' }}>Servings: </span>
             <span>{servings}</span>
           </div>
           <div>
-            <span>Total Calories: </span>
+            <span style={{ fontWeight: '600' }}>Total Calories: </span>
             <span>{calories * servings}</span>
-            <span> kcal</span>
+            <span style={{ fontWeight: '600' }}> kCal</span>
           </div>
         </div>
         <Button onClick={deleteFoodBox(name)}>Delete</Button>
