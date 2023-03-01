@@ -1,7 +1,8 @@
-import React from 'react'
+import { Form, Input, Space } from 'antd';
+import React, { useState } from 'react'
 
 const SearchBar = (props) => {
-    const {foods, display} = {...props};
+    const {foods, setFoodDisplay } = {...props};
     const [searchString, setSearchString] = useState('');
 
     const searchFields = {
@@ -28,7 +29,7 @@ const SearchBar = (props) => {
             }
             return (item) => searchFields[key](item, ...search);
         });
-
+        console.log(validators)
         setFoodDisplay((display) => {
             return foods.filter((item) => {
                 return validators.reduce((select, validator) => validator(item) || select, false)
@@ -37,7 +38,21 @@ const SearchBar = (props) => {
     };
     
   return (
-    <div>SearchBar</div>
+    <Form>
+      <Space direction='veritcal' size='middle'>
+        <Input
+          name='calories'
+          type='text'
+          onChange={setSearchString}
+          />
+        <Input
+          name='submit'
+          type='submit'
+          value='search'
+          onClick={filterDisplay}
+        />
+      </Space>
+    </Form>
   )
 }
 

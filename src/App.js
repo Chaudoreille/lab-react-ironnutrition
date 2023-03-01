@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="App">
       <FoodForm setFoods={setFoods} />
-      <SearchBar foods={foods} display={setFoodsDisplay} />
+      <SearchBar foods={foods} setFoodDisplay={setFoodsDisplay} />
       <Row gutter={[20, 20]} align="stretch" justify="flex-start">
         {foodDisplay.map((item) => (
           <Col key={item.name}>
