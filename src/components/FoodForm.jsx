@@ -11,9 +11,6 @@ const FoodForm = (props) => {
   const handlePictureInput = (e) => setPictureInput(e.currentTarget.value);
   const handleCaloriesInput = (e) => setCaloriesInput(e.currentTarget.value);
   const handleServingsInput = (e) => setServingsInput(e.currentTarget.value);
-  const formStyle = {
-    marginBottom: '2rem',
-  };
   const submitForm = () => {
     const newFoodItem = {
       name: nameInput,
@@ -25,7 +22,7 @@ const FoodForm = (props) => {
   };
 
   return (
-    <Form style={formStyle}>
+    <Form>
       <Space direction="vertical" size="large">
         <h2>Add Food</h2>
         <Row gutter={[10, 10]}>

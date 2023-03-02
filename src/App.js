@@ -12,7 +12,7 @@ function App() {
 
   return (
     <div className="App">
-      <Space>
+      <Space direction='vertical' size="large">
         <FoodForm setFoods={setFoods} />
         <SearchBar foods={foods} setFoodDisplay={setFoodsDisplay} />
         <Row gutter={[20, 20]} align="stretch" justify="flex-start">

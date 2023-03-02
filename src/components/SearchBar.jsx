@@ -27,7 +27,7 @@ const SearchBar = (props) => {
 
   return (
     <Form>
-      <Space direction="veritcal" size="middle">
+      <Space size="middle">
         <Input name="calories" type="text" onChange={updateSearchString} />
         <Input
           name="submit"
