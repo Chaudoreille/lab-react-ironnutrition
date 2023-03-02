@@ -17,23 +17,26 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <Space direction='vertical' size="large">
-        <FoodForm setFoods={setFoodsAndUpdateDisplay} />
-        <SearchBar foods={foods} setFoodsDisplay={setFoodsDisplay} />
-        {(foodDisplay.length) ? (
-          <Row gutter={[20, 20]} align="stretch" justify="flex-start">
-            {foodDisplay.map((item) => (
-              <Col key={item.name}>
-                <FoodBox {...item} setFoods={setFoodsAndUpdateDisplay} />
-              </Col>
-            ))}
-          </Row>
-        ) : (
-          <Empty />
-        )}
-      </Space>
-    </div>
+    <>
+      <h1>IronNutrition</h1>
+      <div className="App">
+        <Space direction='vertical' size="large">
+          <FoodForm setFoods={setFoodsAndUpdateDisplay} />
+          <SearchBar foods={foods} setFoodsDisplay={setFoodsDisplay} />
+          {(foodDisplay.length) ? (
+            <Row gutter={[20, 20]} align="stretch" justify="flex-start">
+              {foodDisplay.map((item) => (
+                <Col key={item.name}>
+                  <FoodBox {...item} setFoods={setFoodsAndUpdateDisplay} />
+                </Col>
+              ))}
+            </Row>
+          ) : (
+            <Empty />
+          )}
+        </Space>
+      </div>
+    </>
   );
 }
 
