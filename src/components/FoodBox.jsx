@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 import { Card, Button, Space } from 'antd';
 
@@ -56,10 +56,12 @@ function FoodBox(props) {
             <span style={{ fontWeight: '600' }}> kCal</span>
           </div>
         </div>
-        <Button type="primary" onClick={deleteFoodBox(name)}>Delete</Button>
+        <Button type="primary" onClick={deleteFoodBox(name)}>
+          Delete
+        </Button>
       </Space>
     </Card>
   );
 }
 
-export default FoodBox
+export default FoodBox;
