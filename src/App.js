@@ -5,6 +5,7 @@ import { Row, Col, Space } from 'antd';
 import FoodBox from './components/FoodBox';
 import FoodForm from './components/FoodForm';
 import SearchBar from './components/SearchBar';
+import Empty from './components/Empty';
 
 function App() {
   const [foods, setFoods] = useState([...foodsData]);
@@ -20,13 +21,17 @@ function App() {
       <Space direction='vertical' size="large">
         <FoodForm setFoods={setFoodsAndUpdateDisplay} />
         <SearchBar foods={foods} setFoodsDisplay={setFoodsDisplay} />
-        <Row gutter={[20, 20]} align="stretch" justify="flex-start">
-          {foodDisplay.map((item) => (
-            <Col key={item.name}>
-              <FoodBox {...item} setFoods={setFoodsAndUpdateDisplay} />
-            </Col>
-          ))}
-        </Row>
+        {(foodDisplay.length) ? (
+          <Row gutter={[20, 20]} align="stretch" justify="flex-start">
+            {foodDisplay.map((item) => (
+              <Col key={item.name}>
+                <FoodBox {...item} setFoods={setFoodsAndUpdateDisplay} />
+              </Col>
+            ))}
+          </Row>
+        ) : (
+          <Empty />
+        )}
       </Space>
     </div>
   );
