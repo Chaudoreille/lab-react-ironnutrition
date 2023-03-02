@@ -10,15 +10,20 @@ function App() {
   const [foods, setFoods] = useState([...foodsData]);
   const [foodDisplay, setFoodsDisplay] = useState([...foodsData]);
 
+  const setFoodsAndUpdateDisplay = (callback) => {
+    setFoods(callback);
+    setFoodsDisplay(callback);
+  };
+
   return (
     <div className="App">
       <Space direction='vertical' size="large">
-        <FoodForm setFoods={setFoods} />
-        <SearchBar foods={foods} setFoodDisplay={setFoodsDisplay} />
+        <FoodForm setFoods={setFoodsAndUpdateDisplay} />
+        <SearchBar foods={foods} setFoodsDisplay={setFoodsDisplay} />
         <Row gutter={[20, 20]} align="stretch" justify="flex-start">
           {foodDisplay.map((item) => (
             <Col key={item.name}>
-              <FoodBox {...item} setFoods={setFoods} />
+              <FoodBox {...item} setFoods={setFoodsAndUpdateDisplay} />
             </Col>
           ))}
         </Row>

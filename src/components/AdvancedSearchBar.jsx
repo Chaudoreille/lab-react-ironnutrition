@@ -2,7 +2,7 @@ import { Form, Input, Space } from 'antd';
 import React, { useState } from 'react';
 
 const AdvancedSearchBar = (props) => {
-  const { foods, setFoodDisplay } = { ...props };
+  const { foods, setFoodsDisplay } = { ...props };
   const [searchString, setSearchString] = useState('');
 
   const updateSearchString = (e) => setSearchString(e.currentTarget.value);
@@ -41,7 +41,7 @@ const AdvancedSearchBar = (props) => {
       };
     });
 
-    setFoodDisplay((display) => {
+    setFoodsDisplay((display) => {
       return foods.filter((item) => {
         return validators.reduce(
           (select, validator) => validator(item) || select,

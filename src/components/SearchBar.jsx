@@ -2,7 +2,7 @@ import { Form, Input, Space } from 'antd';
 import React, { useState } from 'react';
 
 const SearchBar = (props) => {
-  const { foods, setFoodDisplay } = { ...props };
+  const { foods, setFoodsDisplay } = { ...props };
   const [searchString, setSearchString] = useState('');
 
   const updateSearchString = (e) => setSearchString(e.currentTarget.value);
@@ -12,7 +12,7 @@ const SearchBar = (props) => {
   }
 
   const filterDisplay = () => {
-    setFoodDisplay((display) => {
+    setFoodsDisplay((display) => {
       const searchWords = searchString.split(' ');
 
       return foods.filter((item) => {
