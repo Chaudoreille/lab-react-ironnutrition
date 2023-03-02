@@ -1,4 +1,4 @@
-import { Form, Input, Space } from 'antd';
+import { Form, Input, Space, Button } from 'antd';
 import React, { useState } from 'react';
 
 const SearchBar = (props) => {
@@ -29,12 +29,9 @@ const SearchBar = (props) => {
     <Form>
       <Space size="middle">
         <Input name="calories" type="text" onChange={updateSearchString} />
-        <Input
-          name="submit"
-          type="submit"
-          value="search"
-          onClick={filterDisplay}
-        />
+        <Button name="submit" type="primary" value="" onClick={filterDisplay}>
+          Search
+        </Button>
       </Space>
     </Form>
   );
