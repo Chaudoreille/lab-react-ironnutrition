@@ -11,6 +11,10 @@ h1 {
   text-align: center;
 }
 
+.animate {
+  transition: all .5s ease;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

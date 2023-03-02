@@ -21,8 +21,8 @@ function App() {
       <h1>IronNutrition</h1>
       <div className="App">
         <Space direction='vertical' size="large">
-          <FoodForm setFoods={setFoodsAndUpdateDisplay} />
           <SearchBar foods={foods} setFoodsDisplay={setFoodsDisplay} />
+          <FoodForm setFoods={setFoodsAndUpdateDisplay} />
           {(foodDisplay.length) ? (
             <Row gutter={[20, 20]} align="stretch" justify="flex-start">
               {foodDisplay.map((item) => (
